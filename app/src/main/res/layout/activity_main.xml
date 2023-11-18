@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TableLayout
+        android:id="@+id/tablelayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+
+        app:layout_constraintBottom_toTopOf="@+id/quantity_textview"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_V1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/total_textview">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_one"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+
+                android:text="@string/one"
+
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                />
+
+            <Button
+                android:id="@+id/btn_two"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:backgroundTint="@color/teal_200"
+                android:text="@string/two"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_three"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="@string/three"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/btn_four"
+                android:text="@string/four"
+
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+            <Button
+                android:id="@+id/btn_five"
+                android:text="@string/five"
+
+                android:backgroundTint="@color/teal_200"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:id="@+id/btn_six"
+                android:text="@string/six"
+
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/btn_seven"
+                android:text="@string/seven"
+
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+            <Button
+                android:id="@+id/btn_eight"
+                android:text="@string/eight"
+
+                android:backgroundTint="@color/teal_200"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/btn_nine"
+                android:text="@string/nine"
+
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/btn_clear"
+                android:text="@string/clear"
+
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+            <Button
+                android:id="@+id/btn_zero"
+                android:text="@string/zero"
+
+                android:backgroundTint="@color/teal_200"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
+
+
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
+    <TextView
+        android:id="@+id/product_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:hint="@string/product"
+        android:text=""
+        android:textColorHint="#78909C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guideline_H1"
+
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573" />
+
+    <TextView
+        android:id="@+id/total_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/total"
+        android:padding="6dp"
+        android:textColorHint="#78909C"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_H1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_H1"
+        app:layout_constraintTop_toBottomOf="@+id/product_textview"
+        />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_H1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_H2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="394dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_V1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.72" />
+
+
+    <Button
+        android:id="@+id/btn_buy"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Buy"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/tablelayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_V1"
+        app:layout_constraintTop_toBottomOf="@+id/total_textview"
+
+        tools:ignore="NestedWeights" />
+
+    <TextView
+        android:id="@+id/quantity_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:hint="@string/quantity"
+        android:text=""
+        android:textColorHint="#78909C"
+        android:layout_marginTop="10dp"
+android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginRight="100dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_V1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout"
+        />
+
+    <ListView
+        android:id="@+id/listview_products"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/guideline_H2"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
