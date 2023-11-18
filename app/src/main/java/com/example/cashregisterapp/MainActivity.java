@@ -6,8 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -20,7 +23,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener,AdapterView.OnItemClickListener {
     Button button1, button2, button3, button4, button5, button6, button7,
-            button8, button9, button0, buttonclear,butonbuy;
+            button8, button9, button0, buttonclear,butonbuy,buttonManager;
 
     TextView productText, totalText, quantityText;
 
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     int index = -1;
     ArrayList<Product> stockList = new ArrayList<>();
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         button0 = findViewById(R.id.btn_zero);
         buttonclear = findViewById(R.id.btn_clear);
         butonbuy = findViewById(R.id.btn_buy);
+        buttonManager = findViewById(R.id.btn_manager);
 
         listview = findViewById(R.id.listview_products);
         productText = findViewById(R.id.product_textview);
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         productText.setOnClickListener(this);
         totalText.setOnClickListener(this);
         quantityText.setOnClickListener(this);
+        buttonManager.setOnClickListener(this);
 
 
         listview.setOnItemClickListener(this);
@@ -124,10 +131,20 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                }
                break;
 
-           /*case R.id.buttonManager: //Button Manager
+           //Button Manager
+
+           case R.id.btn_manager:
+
+                   Toast.makeText(this,"manager button clicked",Toast.LENGTH_SHORT).show();
+                             //Log.d("testing","managerbutton");
+              // Toast.makeText(this,"manager button clicked",Toast.LENGTH_SHORT).show();
                Intent intentManager = new Intent(MainActivity.this, ManagerActivity.class);
+
+
                startActivity(intentManager);
-               break;*/
+               Toast.makeText(this,"manager button after clicked",Toast.LENGTH_SHORT).show();
+               break;
+
            default: //the exception default buttons 1,2,3,4,5,6,7,8,9,0
                Button b = (Button) view;
                String num1 = quantityText.getText().toString(); // by default quantity text is empty
@@ -145,8 +162,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                quantityText.setText(String.format("%s%s", num1, num2));
 
                if (Integer.parseInt(quantityText.getText().toString()) > stockList.get(index).getQuantity()) {
-                   Toast.makeText(this, "No enough quantity in the stock", Toast.LENGTH_SHORT).show();;
-                   //resets quantity, productType and total textViews to blank
+                   Toast.makeText(this, "No enough quantity in the stock", Toast.LENGTH_SHORT).show();                   //resets quantity, productType and total textViews to blank
                    quantityText.setText("");
                    quantityText.setHint("Quantity");
                    totalText.setText("");

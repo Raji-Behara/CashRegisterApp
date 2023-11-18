@@ -9,6 +9,8 @@ public class MyApp extends Application {
 
 
   ArrayList<Product> appProductlist;
+  ArrayList<History> appHistorylist;
+
 
     public ArrayList<Product> getAppProductlist() {
 
@@ -23,6 +25,7 @@ public class MyApp extends Application {
         }
 return  appProductlist;
     }
+
 
 }
 
