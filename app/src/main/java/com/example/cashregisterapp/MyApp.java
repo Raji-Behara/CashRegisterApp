@@ -6,9 +6,15 @@ import java.util.ArrayList;
 
 public class MyApp extends Application {
 
+    ArrayList<History> appHistorylist = new ArrayList<>(0);
+
+    public ArrayList<History> getAppHistorylist() {
+        return appHistorylist;
+    }
+
+    ArrayList<Product> appProductlist;
 
 
-  ArrayList<Product> appProductlist;
 
     public ArrayList<Product> getAppProductlist() {
 
@@ -23,6 +29,7 @@ public class MyApp extends Application {
         }
 return  appProductlist;
     }
+
 
 }
 
