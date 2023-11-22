@@ -20,7 +20,8 @@ public class HistoryListBaseAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return historylist.size();
+
+       return historylist.size();
     }
 
     @Override
@@ -48,8 +49,16 @@ public class HistoryListBaseAdapter extends BaseAdapter {
         TextView productQty = view.findViewById(R.id.historylist_quantity);
 
         productType.setText(historylist.get(i).historyName);
+
         productPrice.setText(String.valueOf(historylist.get(i).price));
         productQty.setText(String.valueOf(historylist.get(i).quantity));
+
+
+
+      /*  productType.setText("type");
+
+        productPrice.setText("price");
+        productQty.setText("qnty");*/
 
         return view;
 

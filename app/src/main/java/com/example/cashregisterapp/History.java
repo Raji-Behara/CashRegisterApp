@@ -1,8 +1,9 @@
 package com.example.cashregisterapp;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class History {
+public class History implements Serializable {
 
     String historyName;
     double price;

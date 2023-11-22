@@ -31,13 +31,13 @@ public class ShowHistoryActivity extends AppCompatActivity implements View.OnCli
 
 
 
-        // Adapter View
+        // Base Adapter View
 
-       // historyitems = ((MyApp) getApplication()).appHistorylist(); // data
-     //   adapter = new HistoryListBaseAdapter(historyitems, ShowHistoryActivity.this);
-        adapter = new HistoryListBaseAdapter(historyitems,ShowHistoryActivity.this);
-adapter= new HistoryListBaseAdapter(historyitems,ShowHistoryActivity.this);
-         adapter=new HistoryListBaseAdapter(((MyApp) getApplication()).appHistorylist,this);
+     historyitems = ((MyApp) getApplication()).getAppHistorylist(); // data
+       adapter = new HistoryListBaseAdapter(historyitems, ShowHistoryActivity.this);
+        //adapter = new HistoryListBaseAdapter(historyitems,ShowHistoryActivity.this);
+
+      //  adapter=new HistoryListBaseAdapter(((MyApp) getApplication()).appHistorylist,ShowHistoryActivity.this);
        // adapter.listener=this;
        // recyclerView.setAdapter(adapter);
         historyListview.setAdapter(adapter);
@@ -48,8 +48,6 @@ adapter= new HistoryListBaseAdapter(historyitems,ShowHistoryActivity.this);
 
     @Override
     public void onClick(View v) {
-
-
 
 
     }
