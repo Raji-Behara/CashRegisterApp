@@ -1,60 +1,32 @@
 package com.example.cashregisterapp;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import android.content.Intent;
+import android.os.Bundle;
 
-public class ShowHistoryActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
-
-    ListView historyListview;
-
-    ArrayList<History> historyitems = new ArrayList<>();
-    BaseAdapter adapter;
-
-
+public class ShowHistoryActivity extends AppCompatActivity implements HistoryRecyclerAdapter.ItemListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showhistory);
 
-
-        historyListview = findViewById(R.id.show_history_list);
-
-        historyListview.setOnItemClickListener(this);
-
-
-
-        // Base Adapter View
-
-     historyitems = ((MyApp) getApplication()).getAppHistorylist(); // data
-       adapter = new HistoryListBaseAdapter(historyitems, ShowHistoryActivity.this);
-        //adapter = new HistoryListBaseAdapter(historyitems,ShowHistoryActivity.this);
-
-      //  adapter=new HistoryListBaseAdapter(((MyApp) getApplication()).appHistorylist,ShowHistoryActivity.this);
-       // adapter.listener=this;
-       // recyclerView.setAdapter(adapter);
-        historyListview.setAdapter(adapter);
-
-
-
+        //Recycler adapter
+        RecyclerView recyclerView=findViewById(R.id.show_history_recycler);
+        HistoryRecyclerAdapter adapter=new HistoryRecyclerAdapter(((MyApp) getApplication()).appHistorylist,this);
+        adapter.listener=this;
+        recyclerView.setAdapter(adapter);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(llm);
     }
 
     @Override
-    public void onClick(View v) {
-
-
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
+    public void onItemClicked(int pos) {
+        Intent intent=new Intent(ShowHistoryActivity.this,DetailedHistoryActivity.class);
+        intent.putExtra("Index",pos);
+        startActivity(intent);
     }
 }

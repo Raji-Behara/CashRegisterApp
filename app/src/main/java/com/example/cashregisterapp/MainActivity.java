@@ -89,23 +89,9 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
     }
 
+//implementation  of onclick listener
 
-   // @Override
-
-
-   /* public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_buy: //Buy Button
-                if (!totalText.getText().toString().equals("")) {
-                   // showAlert();
-                } else {
-
-                    Toast.makeText(this, "please fill all fields", Toast.LENGTH_SHORT).show();
-                }
-                break;
-
-*/
-   @Override //implementation of override mandatory function/method of onclick listener
+   @Override
    public void onClick(@NonNull View view) {
        switch (view.getId()) {
            //Clear Button
@@ -129,7 +115,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
 
 
-                   showAlert(); //showalert is the buy dialog
+                   dialogAlert(); //showalert is the buy dialog
 
                } else {
                    Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show();
@@ -186,8 +172,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         }
 
     }
-
-    private void showAlert() { //Buy confirmation Dialog
+    //Buy confirmation Dialog
+    private void dialogAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setMessage("Your purchase is " + quantityText.getText().toString() + " " + stockList.get(index).getProductName() + " for " + totalText.getText().toString())
@@ -196,17 +182,15 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int id) {
-
+              //clear text
                 quantityText.setText("");
                 quantityText.setHint("Quantity");
                 totalText.setText("");
                 totalText.setHint("Total");
                 productText.setText("");
-                productText.setHint("Product Type");
+                productText.setHint("ProductType");
             }
         });
-
-
 
 
 
@@ -218,7 +202,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         ((MyApp) getApplication()).appProductlist.set(index, obj);
 
 
-        //it will run the adapter again and update its new list values
+        //update its new list values
         adapter.notifyDataSetChanged();
 
 
@@ -231,7 +215,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
             productText.setText("");
             productText.setHint("Product Type");
         }
-       //History Button
+       //History Button created
        Date d1 = new Date();
         History h1 = new History(obj.getProductName(), parseDouble(totalText.getText().toString()), Integer.parseInt(quantityText.getText().toString()), d1);
         ((MyApp) getApplication()).getAppHistorylist().add(h1);
