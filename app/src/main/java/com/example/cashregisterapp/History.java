@@ -1,36 +1,37 @@
 package com.example.cashregisterapp;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class History implements Serializable {
-
-    String historyName;
-    double price;
+public class History {
+    String type;
+    Double price;
     int quantity;
-
     Date date;
 
-    public History(String historyName, double price, int quantity, Date date) {
-        this.historyName = historyName;
+    public History(String type, Double price, int quantity, Date date){
+        this.type = type;
         this.price = price;
         this.quantity = quantity;
         this.date = date;
     }
 
-    public String getHistoryName() {
-        return historyName;
+    public Date getDate(){ return date; }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public void setHistoryName(String historyName) {
-        this.historyName = historyName;
+    public String getType() {
+        return type;
     }
 
-    public double getPrice() {
-        return price;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setPrice(double price) {
+    public Double getPrice() { return price;}
+
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -42,19 +43,12 @@ public class History implements Serializable {
         this.quantity = quantity;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     @Override
     public String toString() {
         return "History: " +
                 "date=" + date +
-                " historyName='" + historyName  +
+                " type='" + type  +
                 " price=" + price +
                 " quantity=" + quantity;
     }

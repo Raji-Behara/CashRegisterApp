@@ -10,11 +10,12 @@
 
     >
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
 
-        android:id="@+id/show_history_list"
+        android:id="@+id/show_history_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:backgroundTint="@color/gray"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

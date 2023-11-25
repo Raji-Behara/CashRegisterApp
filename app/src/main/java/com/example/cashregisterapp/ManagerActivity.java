@@ -25,7 +25,6 @@ public class ManagerActivity  extends AppCompatActivity implements View.OnClickL
         buttonRestock.setOnClickListener(this);
 
 
-
     }
 
     @Override
@@ -33,17 +32,17 @@ public class ManagerActivity  extends AppCompatActivity implements View.OnClickL
 
         if(v.getId()==R.id.btn_history)
         {
-Intent intentHistory = new Intent(ManagerActivity.this,ShowHistoryActivity.class);
-startActivity(intentHistory);
+           Intent intentHistory = new Intent(ManagerActivity.this,ShowHistoryActivity.class);
+           startActivity(intentHistory);
 
-            Toast.makeText(this,"After History button clicked",Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this,"After History button clicked",Toast.LENGTH_SHORT).show();
 
         }
 
         else
         {
-Intent intentRestock = new Intent(ManagerActivity.this,RestockActivity.class);
-startActivity(intentRestock);
+        Intent intentRestock = new Intent(ManagerActivity.this,RestockActivity.class);
+        startActivity(intentRestock);
         }
 
     }
